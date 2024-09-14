@@ -6,7 +6,7 @@ import org.springframework.http.converter.json.AbstractJackson2HttpMessageConver
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Type;
-
+// 스웨거에서 이미지 저장을 위한 클래스
 @Component
 public class MultipartConvert extends AbstractJackson2HttpMessageConverter {
     /**
