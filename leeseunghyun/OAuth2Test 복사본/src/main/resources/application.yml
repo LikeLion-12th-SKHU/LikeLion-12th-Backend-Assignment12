@@ -1,0 +1,43 @@
+spring:
+  servlet:
+    multipart:
+      maxFileSize: 10MB
+      maxRequestSize: 60MB
+  profiles:
+    active: prod
+  datasource:
+    url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+    show-sql: true
+
+jwt:
+  secret: ${JWT_SECRET}
+  access-token-validity-in-milliseconds: ${JWT_ACCESS_TOKEN_VALIDITY_IN_MILLISECONDS}
+client-id: ${GOOGLE_CLIENT_ID}
+client-secret: ${GOOGLE_CLIENT_SECRET}
+
+cloud:
+  aws:
+    credentials:
+      access-key: AKIAVHX6PPXBRTO2RZXT
+      secret-key: AKIAVHX6PPXBRTO2RZXT
+    s3:
+      bucket: do-sopt-server-soohyun
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
+      logging:
+
+level:
+  org:
+    springframework:
+      security: DEBUG
