@@ -53,6 +53,12 @@ public class PostController {
         return new ResponseEntity<>(postListResDto, HttpStatus.OK);
     }
 
+    @Operation(summary = "게시글 작성", description = "새 게시글 작성.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "응답 생성에 성공하였습니다."),
+            @ApiResponse(responseCode = "400", description = "잘못된 요청입니다."),
+            @ApiResponse(responseCode = "500", description = "서버 내부 요청입니다. 관리자 문의.")
+    })
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<PostInfoResDto> postSave(@RequestPart("post") PostSaveReqDto postSaveReqDto,
                                            @RequestPart("image") MultipartFile image,

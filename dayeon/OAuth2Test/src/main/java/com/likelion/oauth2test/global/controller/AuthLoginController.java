@@ -11,12 +11,6 @@ import org.springframework.web.bind.annotation.*;
 public class AuthLoginController {
     private final AuthLoginService authLoginService;
 
-//    콘솔에 Authorization code 출력
-    @GetMapping("/code/{registrationId}")
-    public void googleLogin(@RequestParam String code, @PathVariable String registrationId) {
-        authLoginService.socialLogin(code, registrationId);
-    }
-
     @GetMapping("/code/google")
     public Token googleCallback(@RequestParam(name = "code") String code) {
         String googleAccessToken = authLoginService.getGoogleAccessToken(code);

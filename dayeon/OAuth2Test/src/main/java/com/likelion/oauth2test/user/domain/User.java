@@ -1,10 +1,14 @@
 package com.likelion.oauth2test.user.domain;
 
+import com.likelion.oauth2test.post.domain.Post;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -29,4 +33,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(name = "USER_ROLE", nullable = false)
     private Role role;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Post> posts = new ArrayList<>();
 }

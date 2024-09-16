@@ -5,10 +5,7 @@ import com.likelion.oauth2test.user.domain.User;
 import jakarta.validation.constraints.NotBlank;
 
 public record PostSaveReqDto(
-        @NotBlank(message = "게시글 제목은 필수로 입력해야 합니다.")
         String title,
-
-        @NotBlank(message = "게시글 내용은 필수로 입력해야 합니다.")
         String content
 
 ) {

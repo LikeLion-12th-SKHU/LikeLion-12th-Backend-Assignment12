@@ -20,11 +20,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class AuthLoginService {
 
-    //콘솔에 Authorization code 출력
-    public void socialLogin(String code, String registrationId) {
-        System.out.println("code = " + code);
-        System.out.println("registrationId = " + registrationId);
-    }
     @Value("${client-id}")  // value import 할때 lombok으로 하면 안됨.
     private String GOOGLE_CLIENT_ID;
 

@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class SwaggerConfig {
-
     private final String AUTH_TOKEN_HEADER = "Authorization";
+
     @Bean
     public OpenAPI openAPI() {
         return new OpenAPI()
